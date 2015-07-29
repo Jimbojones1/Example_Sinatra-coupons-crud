@@ -1,0 +1,51 @@
+<h1>Coupons List</h1>
+
+<li><a href='/coupons/create'>Create coupon</a></li>
+
+<table>
+  <thead>
+    <th>
+      ID
+    </th>
+    <th>
+      title
+    </th>
+    <th>
+      description
+    </th>
+    <th>
+      product
+    </th>
+    <th>
+      discount
+    </th>
+    <th>
+      exp_date
+    </th>
+  </thead>
+
+  <tbody>
+    <% @coupons.each do |coupon| %>
+      <tr>
+        <td>
+          <%= coupon.title %>
+        </td>
+        <td>
+          <%= coupon.description %>
+        </td>
+        <td>
+          <%= coupon.product %>
+        </td>
+        <td>
+          <%= coupon.discount %>
+        </td>
+        <td>
+          <%= coupon.exp_date %>
+        </td>
+        <td>
+          <a href='/coupons/edit/<%= coupon.id %>'>Edit</a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
